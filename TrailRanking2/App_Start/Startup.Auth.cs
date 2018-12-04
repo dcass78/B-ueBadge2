@@ -5,6 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
+using TrailRanking.Data;
 using TrailRanking2.Models;
 
 namespace TrailRanking2

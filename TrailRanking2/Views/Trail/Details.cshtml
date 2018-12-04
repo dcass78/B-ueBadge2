@@ -1,0 +1,74 @@
+﻿@model TrailRanking.Models.TrailDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TrailDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrailId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrailName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailRank)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrailRank)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TrailId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

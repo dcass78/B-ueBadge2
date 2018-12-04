@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrailRanking.Data;
+using TrailRanking.Models;
 
 namespace TrailRanking.Services
 {
     public class TrailService
     {
         private readonly Guid _userId;
+
         public TrailService(Guid userId)
         {
             _userId = userId;
@@ -18,12 +21,11 @@ namespace TrailRanking.Services
             var entity =
                 new Trail()
                 {
-                    TrailId = _userId,
                     TrailName = model.TrailName,
                     Description = model.Description,
                     TrailRank = model.TrailRank,
                     Location = model.Location,
-                    CreatedUtc = DateTimeOffset.Now
+                    CreatedUtc = DateTimeOffset.Now,
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -37,9 +39,7 @@ namespace TrailRanking.Services
                 using (var ctx = new ApplicationDbContext())
                 {
                     var query =
-                        ctx
-                            .Trails
-                            .Where(e => e.OwnerId == _userId)
+                        ctx.Trails
                             .Select(
                                 e =>
                                     new TrailListItem
@@ -60,7 +60,7 @@ namespace TrailRanking.Services
                 var entity =
                      ctx
                          .Trails
-                         .Single(e => e.TrailId == trailId && e.OwnerId == _userId);
+                         .Single(e => e.TrailId == trailId);
                 return
                     new TrailDetail
                     {
@@ -81,7 +81,7 @@ namespace TrailRanking.Services
                 var entity =
                             ctx
                                 .Trails
-                                .Single(e => e.TrailId == model.TrailId && e.OwnerId == _userId);
+                                .Single(e => e.TrailId == model.TrailId);
                 entity.TrailName = model.TrailName;
                 entity.Description = model.Description;
                 entity.TrailRank = model.TrailRank;
@@ -97,7 +97,7 @@ namespace TrailRanking.Services
                 var entity =
                     ctx
                         .Trails
-                        .Single(e => e.TrailId == trailId && e.OwnerId == _userId);
+                        .Single(e => e.TrailId == trailId);
                 ctx.Trails.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
