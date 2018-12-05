@@ -59,6 +59,14 @@
     <Compile Include="TrailDetail.cs" />
     <Compile Include="TrailEdit.cs" />
     <Compile Include="TrailListItem.cs" />
+    <Compile Include="TrailRunningCreate.cs" />
+    <Compile Include="TrailRunningDetail.cs" />
+    <Compile Include="TrailRunningEdit.cs" />
+    <Compile Include="TrailRunningListItem.cs" />
+    <Compile Include="WishListCreate.cs" />
+    <Compile Include="WishListDetail.cs" />
+    <Compile Include="WishListEdit.cs" />
+    <Compile Include="WishListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -35,7 +35,6 @@ namespace TrailRanking.Services
         }
         public IEnumerable<TrailListItem> GetTrails()
         {
-            {
                 using (var ctx = new ApplicationDbContext())
                 {
                     var query =
@@ -51,7 +50,6 @@ namespace TrailRanking.Services
                             );
                     return query.ToArray();
                 }
-            }
         }
         public TrailDetail GetTrailById(int trailId)
         {
