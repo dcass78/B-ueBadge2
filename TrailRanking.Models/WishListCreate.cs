@@ -10,8 +10,8 @@ namespace TrailRanking.Models
     public class WishListCreate
     {
         [Required]
-        public string Trail { get; set; }
+        public int TrailId { get; set; }
+        public string TrailName { get; set; }
         public string Location { get; set; }
-        public override string ToString() => Trail;
     }
 }

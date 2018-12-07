@@ -32,6 +32,7 @@ namespace TrailRanking.Data
         //public DbSet<Description> Descriptions { get; set; } //<--- Add this
         public DbSet<Trail> Trails { get; set; }
         public DbSet<WishList> WishLists { get; set; }
+        public DbSet<Equipment> Equipment { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

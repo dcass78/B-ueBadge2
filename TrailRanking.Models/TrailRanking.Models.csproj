@@ -59,10 +59,10 @@
     <Compile Include="TrailDetail.cs" />
     <Compile Include="TrailEdit.cs" />
     <Compile Include="TrailListItem.cs" />
-    <Compile Include="TrailRunningCreate.cs" />
-    <Compile Include="TrailRunningDetail.cs" />
-    <Compile Include="TrailRunningEdit.cs" />
-    <Compile Include="TrailRunningListItem.cs" />
+    <Compile Include="EquipmentCreate.cs" />
+    <Compile Include="EquipmentDetail.cs" />
+    <Compile Include="EquipmentEdit.cs" />
+    <Compile Include="EquipmentListItem.cs" />
     <Compile Include="WishListCreate.cs" />
     <Compile Include="WishListDetail.cs" />
     <Compile Include="WishListEdit.cs" />
@@ -71,6 +71,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrailRanking.Data\TrailRanking.Data.csproj">
+      <Project>{2DBC5D06-EA1A-4EEA-AF51-0E7B00A62C38}</Project>
+      <Name>TrailRanking.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

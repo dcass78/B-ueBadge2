@@ -7,18 +7,17 @@ using System.Threading.Tasks;
 
 namespace TrailRanking.Models
 {
-    public class TrailDetail
+    public class EquipmentDetail
     {
-        public int TrailId { get; set; }
-        public string TrailName { get; set; }
-        public string Description { get; set; }
+        [Required]
         public int EquipmentId { get; set; }
-        public int TrailRank { get; set; }
-        public string Location { get; set; }
+        [Required]
+        public string EquipmentName { get; set; }
+        [Required]
+        public string EquipmentUse { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
-        public override string ToString() => $"[{TrailId}] {TrailName}";
     }
 }

@@ -16,6 +16,8 @@ namespace TrailRanking.Data
         [Required]
         public string Description { get; set; }
         [Required]
+        public int EquipmentId { get; set; }
+        [Required]
         [Range(1, 5, ErrorMessage = "please choose a number between 1 and 5")]
         public int TrailRank { get; set; }
         [Required]
@@ -24,5 +26,6 @@ namespace TrailRanking.Data
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
+        public virtual Equipment Equipment { get; set; }
     }
 }

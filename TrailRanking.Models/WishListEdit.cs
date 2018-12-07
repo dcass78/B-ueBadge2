@@ -9,7 +9,7 @@ namespace TrailRanking.Models
     public class WishListEdit
     {
         public int WishListId { get; set; }
-        public string Trail { get; set; }
-        public string Location { get; set; }
+        public string TrailName { get; set; }
+        public int TrailId { get; set; }
     }
 }

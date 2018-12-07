@@ -8,6 +8,19 @@ namespace TrailRanking.Data.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Equipment",
+                c => new
+                    {
+                        EquipmentId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        EquipmentName = c.String(nullable: false),
+                        EquipmentUse = c.String(nullable: false),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
+                    })
+                .PrimaryKey(t => t.EquipmentId);
+            
+            CreateTable(
                 "dbo.IdentityRole",
                 c => new
                     {
@@ -38,6 +51,7 @@ namespace TrailRanking.Data.Migrations
                         TrailId = c.Int(nullable: false, identity: true),
                         TrailName = c.String(nullable: false),
                         Description = c.String(nullable: false),
+                        Equipment = c.String(nullable: false),
                         TrailRank = c.Int(nullable: false),
                         Location = c.String(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
@@ -91,24 +105,41 @@ namespace TrailRanking.Data.Migrations
                 .ForeignKey("dbo.ApplicationUser", t => t.ApplicationUser_Id)
                 .Index(t => t.ApplicationUser_Id);
             
+            CreateTable(
+                "dbo.WishList",
+                c => new
+                    {
+                        WishListId = c.Int(nullable: false, identity: true),
+                        TrailId = c.Int(nullable: false),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
+                    })
+                .PrimaryKey(t => t.WishListId)
+                .ForeignKey("dbo.Trail", t => t.TrailId, cascadeDelete: true)
+                .Index(t => t.TrailId);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.WishList", "TrailId", "dbo.Trail");
             DropForeignKey("dbo.IdentityUserRole", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropIndex("dbo.WishList", new[] { "TrailId" });
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropTable("dbo.WishList");
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.Trail");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Equipment");
         }
     }
 }

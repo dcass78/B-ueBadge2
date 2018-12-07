@@ -10,21 +10,23 @@ using TrailRanking.Services;
 namespace TrailRanking2.Controllers
 {
     [Authorize]
-    public class NoteController : Controller
+    public class WishListController : Controller
     {
         // GET: Note
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new WishListService(userId);
+            //var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = CreateWishListService();
             var model = service.GetWishLists();
-
             return View(model);
         }
         //Add method here VVVV
         // GET
         public ActionResult Create()
         {
+            var service = CreateTrailService();
+            var trail = service.GetTrails();
+            ViewBag.TrailId = new SelectList(trail, "Trail Id", "Trail Name");
             return View();
         }
         [HttpPost]
@@ -52,8 +54,8 @@ namespace TrailRanking2.Controllers
                 new WishListEdit
                 {
                     WishListId = detail.WishListId,
-                    Trail = detail.Trail,
-                    Location = detail.Location
+                    TrailId = detail.TrailId,
+                    TrailName = detail.TrailName,
                 };
             return View(model);
         }
@@ -97,11 +99,6 @@ namespace TrailRanking2.Controllers
             TempData["SaveResult"] = "Your wishList was deleted";
             return RedirectToAction("Index");
         }
-        private WishListService NewMethod()
-        {
-            WishListService service = CreateWishListService();
-            return service;
-        }
         public ActionResult Details(int id)
         {
             var svc = CreateWishListService();
@@ -114,6 +111,13 @@ namespace TrailRanking2.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new WishListService(userId);
+            return service;
+        }
+        private TrailService CreateTrailService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new TrailService(userId);
+
             return service;
         }
     }

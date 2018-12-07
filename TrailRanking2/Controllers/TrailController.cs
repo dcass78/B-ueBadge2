@@ -15,8 +15,7 @@ namespace TrailRanking2.Controllers
         // GET: Trail
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new TrailService(userId);
+            var service = CreateTrailService();
             var model = service.GetTrails();
             return View(model);
         }
@@ -24,6 +23,9 @@ namespace TrailRanking2.Controllers
         // GET
         public ActionResult Create()
         {
+            var service = CreateEquipmentService();
+            var equipment = service.GetEquipment();
+            ViewBag.EquipmentId = new SelectList(equipment, "EquipmentId", "EquipmentName");
             return View();
         }
         [HttpPost]
@@ -53,6 +55,7 @@ namespace TrailRanking2.Controllers
                     TrailId = detail.TrailId,
                     TrailName = detail.TrailName,
                     Description = detail.Description,
+                    EquipmentId = detail.EquipmentId,
                     TrailRank = detail.TrailRank,
                     Location = detail.Location,
                 };
@@ -98,11 +101,6 @@ namespace TrailRanking2.Controllers
             TempData["SaveResult"] = "Your trail was deleted";
             return RedirectToAction("Index");
         }
-        private TrailService NewMethod()
-        {
-            TrailService service = CreateTrailService();
-            return service;
-        }
         public ActionResult Details(int id)
         {
             var svc = CreateTrailService();
@@ -115,6 +113,12 @@ namespace TrailRanking2.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new TrailService(userId);
+            return service;
+        }
+        private EquipmentService CreateEquipmentService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new EquipmentService(userId);
             return service;
         }
     }

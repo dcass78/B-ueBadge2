@@ -11,6 +11,7 @@ namespace TrailRanking.Models
         public int TrailId { get; set; }
         public string TrailName { get; set; }
         public string Description { get; set; }
+        public int EquipmentId { get; set; }
         public int TrailRank { get; set; }
         public string Location { get; set; }
     }

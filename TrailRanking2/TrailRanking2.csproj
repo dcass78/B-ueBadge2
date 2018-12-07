@@ -198,7 +198,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TrailController.cs" />
-    <Compile Include="Controllers\TrailRunningController.cs" />
+    <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\WishListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -267,20 +267,24 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Trail\Index.cshtml" />
-    <Content Include="Views\Trail\Create.cshtml" />
-    <Content Include="Views\Trail\Details.cshtml" />
-    <Content Include="Views\Trail\Delete.cshtml" />
-    <Content Include="Views\Trail\Edit.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
     <Content Include="Views\WishList\Index.cshtml" />
     <Content Include="Views\WishList\Create.cshtml" />
     <Content Include="Views\WishList\Details.cshtml" />
     <Content Include="Views\WishList\Delete.cshtml" />
+    <Content Include="Views\Equipment\Index.cshtml" />
+    <Content Include="Views\Equipment\Create.cshtml" />
+    <Content Include="Views\Equipment\Edit.cshtml" />
+    <Content Include="Views\Equipment\Delete.cshtml" />
+    <Content Include="Views\Equipment\Details.cshtml" />
+    <Content Include="Views\Trail\Create.cshtml" />
+    <Content Include="Views\Trail\Index.cshtml" />
+    <Content Include="Views\Trail\Edit.cshtml" />
+    <Content Include="Views\Trail\Details.cshtml" />
+    <Content Include="Views\Trail\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TrailRunning\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

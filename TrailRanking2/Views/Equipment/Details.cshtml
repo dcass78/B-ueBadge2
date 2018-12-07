@@ -1,4 +1,4 @@
-﻿@model TrailRanking.Models.WishListDetail
+﻿@model TrailRanking.Models.EquipmentDetail
 
 @{
     ViewBag.Title = "Details";
@@ -7,23 +7,31 @@
 <h2>Details</h2>
 
 <div>
-    <h4>WishListDetail</h4>
+    <h4>EquipmentDetail</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.WishListId)
+            @Html.DisplayNameFor(model => model.EquipmentId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.WishListId)
+            @Html.DisplayFor(model => model.EquipmentId)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TrailId)
+            @Html.DisplayNameFor(model => model.EquipmentName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TrailId)
+            @Html.DisplayFor(model => model.EquipmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipmentUse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipmentUse)
         </dd>
 
         <dt>
@@ -45,6 +53,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.WishListId }) |
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

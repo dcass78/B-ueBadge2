@@ -23,6 +23,7 @@ namespace TrailRanking.Services
                 {
                     TrailName = model.TrailName,
                     Description = model.Description,
+                    EquipmentId = model.EquipmentId,
                     TrailRank = model.TrailRank,
                     Location = model.Location,
                     CreatedUtc = DateTimeOffset.Now,
@@ -65,6 +66,7 @@ namespace TrailRanking.Services
                         TrailId = entity.TrailId,
                         TrailName = entity.TrailName,
                         Description = entity.Description,
+                        EquipmentId = entity.EquipmentId,
                         TrailRank = entity.TrailRank,
                         Location = entity.Location,
                         CreatedUtc = entity.CreatedUtc,
@@ -82,6 +84,7 @@ namespace TrailRanking.Services
                                 .Single(e => e.TrailId == model.TrailId);
                 entity.TrailName = model.TrailName;
                 entity.Description = model.Description;
+                entity.EquipmentId = model.EquipmentId;
                 entity.TrailRank = model.TrailRank;
                 entity.Location = model.Location;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;

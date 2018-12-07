@@ -7,21 +7,19 @@ using System.Threading.Tasks;
 
 namespace TrailRanking.Data
 {
-    public class WishList
+    public class Equipment
     {
         [Key]
-        public int WishListId { get; set; }
+        public int EquipmentId { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
         [Required]
-        public string TrailName { get; set; }
+        public string EquipmentName { get; set; }
         [Required]
-        public int TrailId { get; set; }
+        public string EquipmentUse { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
-
-        public virtual Trail Trail { get; set; }
     }
 }

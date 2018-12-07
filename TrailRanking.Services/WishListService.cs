@@ -20,8 +20,8 @@ namespace TrailRanking.Services
             var entity =
                 new WishList()
                 {
-                    Trail = model.Trail,
-                    Location = model.Location,
+                    OwnerId = _userId,
+                    TrailId = model.TrailId,
                     CreatedUtc = DateTimeOffset.Now
                 };
             using (var ctx = new ApplicationDbContext())
@@ -41,7 +41,8 @@ namespace TrailRanking.Services
                         new WishListItem
                         {
                             WishListId = e.WishListId,
-                            Trail = e.Trail,
+                            TrailId = e.TrailId,
+                            TrailName = e.TrailName,
                             CreatedUtc = e.CreatedUtc
                         }
                   );
@@ -55,13 +56,13 @@ namespace TrailRanking.Services
                 var entity =
                      ctx
                          .WishLists
-                         .Single(e => e.WishListId == wishListId);
+                         .Single(e => e.WishListId == wishListId && e.OwnerId == _userId);
                 return
                     new WishListDetail
                     {
                         WishListId = entity.WishListId,
-                        Trail = entity.Trail,
-                        Location = entity.Location,
+                        TrailId = entity.TrailId,
+                        TrailName = entity.TrailName,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
@@ -74,9 +75,8 @@ namespace TrailRanking.Services
                 var entity =
                             ctx
                                 .WishLists
-                                .Single(e => e.WishListId == model.WishListId);
-                entity.Trail = model.Trail;
-                entity.Location = model.Location;
+                                .Single(e => e.WishListId == model.WishListId && e.OwnerId == _userId);
+                entity.TrailId = model.TrailId;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
                 return ctx.SaveChanges() == 1;
             }
@@ -88,7 +88,7 @@ namespace TrailRanking.Services
                 var entity =
                     ctx
                         .WishLists
-                        .Single(e => e.WishListId == wishListId);
+                        .Single(e => e.WishListId == wishListId && e.OwnerId == _userId);
                 ctx.WishLists.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }

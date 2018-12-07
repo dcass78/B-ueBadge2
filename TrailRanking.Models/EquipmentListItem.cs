@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace TrailRanking.Models
 {
-    public class WishListItem
+    public class EquipmentListItem
     {
-        [Display(Name = "Wish List Id")]
-        public int WishListId { get; set; }
-        [Display(Name = "Trail Id")]
-        public int TrailId { get; set; }
-        [Display(Name = "Trail Name")]
-        public string TrailName { get; set; }
+        [Display(Name = "Equipment Id")]
+        public int EquipmentId { get; set; }
+        [Display(Name = "Equipment Name")]
+        public string EquipmentName { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }

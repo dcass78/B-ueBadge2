@@ -10,8 +10,9 @@ namespace TrailRanking.Models
     public class WishListDetail
     {
         public int WishListId { get; set; }
-        public string Trail { get; set; }
-        public string Location { get; set; }
+        public int TrailId { get; set; }
+        [Display(Name = "Trail Name")]
+        public string TrailName { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]

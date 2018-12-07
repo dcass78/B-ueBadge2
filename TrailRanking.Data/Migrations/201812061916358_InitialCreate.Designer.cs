@@ -13,7 +13,7 @@ namespace TrailRanking.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201812041738218_InitialCreate"; }
+            get { return "201812061916358_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

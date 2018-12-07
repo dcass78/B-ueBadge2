@@ -14,6 +14,7 @@ namespace TrailRanking.Models
         public string TrailName { get; set; }
         [MaxLength(8000)]
         public string Description { get; set; }
+        public int EquipmentId { get; set; }
         public int TrailRank { get; set; }
         public string Location { get; set; }
 
