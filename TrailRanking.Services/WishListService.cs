@@ -42,7 +42,7 @@ namespace TrailRanking.Services
                         {
                             WishListId = e.WishListId,
                             TrailId = e.TrailId,
-                            TrailName = e.TrailName,
+                            TrailName = e.Trail.TrailName,
                             CreatedUtc = e.CreatedUtc
                         }
                   );
@@ -62,7 +62,7 @@ namespace TrailRanking.Services
                     {
                         WishListId = entity.WishListId,
                         TrailId = entity.TrailId,
-                        TrailName = entity.TrailName,
+                        TrailName = entity.Trail.TrailName,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };

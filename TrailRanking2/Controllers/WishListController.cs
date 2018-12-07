@@ -15,7 +15,7 @@ namespace TrailRanking2.Controllers
         // GET: Note
         public ActionResult Index()
         {
-            //var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var service = CreateWishListService();
             var model = service.GetWishLists();
             return View(model);
@@ -26,7 +26,7 @@ namespace TrailRanking2.Controllers
         {
             var service = CreateTrailService();
             var trail = service.GetTrails();
-            ViewBag.TrailId = new SelectList(trail, "Trail Id", "Trail Name");
+            ViewBag.TrailId = new SelectList(trail, "TrailId", "TrailName");
             return View();
         }
         [HttpPost]
@@ -49,7 +49,10 @@ namespace TrailRanking2.Controllers
         public ActionResult Edit(int id)
         {
             var service = CreateWishListService();
+            var trailService = CreateTrailService();
             var detail = service.GetWishListById(id);
+            var trail = trailService.GetTrails();
+            ViewBag.TrailId = new SelectList(trail, "TrailId", "TrailName", detail.TrailName);
             var model =
                 new WishListEdit
                 {
@@ -64,6 +67,10 @@ namespace TrailRanking2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, WishListEdit model)
         {
+            var trailService = CreateTrailService();
+            var trail = trailService.GetTrails();
+            ViewBag.TrailId = new SelectList(trail, "TrailId", "TrailName");
+
             if (!ModelState.IsValid) return View(model);
 
             if (model.WishListId != id)
@@ -103,7 +110,6 @@ namespace TrailRanking2.Controllers
         {
             var svc = CreateWishListService();
             var model = svc.GetWishListById(id);
-
 
             return View(model);
         }

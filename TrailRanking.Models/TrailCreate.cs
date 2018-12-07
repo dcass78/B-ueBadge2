@@ -11,10 +11,13 @@ namespace TrailRanking.Models
     {
         [Required]
         [MaxLength(100, ErrorMessage = "There are too many characters in this field.")]
+        [Display(Name = "Trail Name")]
         public string TrailName { get; set; }
         [MaxLength(8000)]
         public string Description { get; set; }
+        [Display(Name = "Equipment Id")]
         public int EquipmentId { get; set; }
+        [Display(Name = "Trail Rank")]
         public int TrailRank { get; set; }
         public string Location { get; set; }
 

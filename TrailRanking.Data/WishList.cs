@@ -13,9 +13,7 @@ namespace TrailRanking.Data
         public int WishListId { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
-        [Required]
-        public string TrailName { get; set; }
-        [Required]
+        
         public int TrailId { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }

@@ -12,23 +12,23 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>WishListCreate</h4>
+    <h4>Wish List Create</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
-        @Html.LabelFor(model => model.TrailId, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.TrailId, "Trail", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.TrailId, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.DropDownList("TrailId", null, "Please Select Trail", htmlAttributes : new { @class = "form-control" } )
             @Html.ValidationMessageFor(model => model.TrailId, "", new { @class = "text-danger" })
         </div>
     </div>
-    <div class="form-group">
+    @*<div class="form-group">
         @Html.LabelFor(model => model.TrailName, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.TrailName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.TrailName, "", new { @class = "text-danger" })
         </div>
-    </div>
+    </div>*@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

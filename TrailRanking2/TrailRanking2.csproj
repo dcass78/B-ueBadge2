@@ -282,6 +282,7 @@
     <Content Include="Views\Trail\Edit.cshtml" />
     <Content Include="Views\Trail\Details.cshtml" />
     <Content Include="Views\Trail\Delete.cshtml" />
+    <Content Include="Views\WishList\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
