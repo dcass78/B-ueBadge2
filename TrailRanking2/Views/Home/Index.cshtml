@@ -1,31 +1,41 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<style>
+    .jumbotron {
+        background: url('https://images.pexels.com/photos/248174/pexels-photo-248174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center 25%;
+        background-size: cover;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+    }
+</style>
 
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <h1>TrAiL YeAh!</h1>
+    <p class="lead">TrAiL YeAh! is a guide to all the great hiking trails your little heart desires.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Go here &raquo;</a></p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>Trails</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            TrAiL YeAh! guides you to the areas best hiking trails based upon a ranking system.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <button>
+        @Html.ActionLink("Trails", "Index", "Trail")
+        </button>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>Wish List</h2>
+        <p>A place where you can store your wish list of trails not yet explored.</p>
+        <button>@Html.ActionLink("Wish Lists", "Index", "Wish List")</button>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>Hiking Equipment</h2>
+        <p>A great way to store ideas of the best hiking equipment and share with others.</p>
+        <button>@Html.ActionLink("Equipment", "Index", "Equipment")
+        </button>
     </div>
 </div>

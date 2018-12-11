@@ -3,49 +3,55 @@
 @{
     ViewBag.Title = "Index";
 }
+<style>
+.background { background: url('https://images.pexels.com/photos/355654/pexels-photo-355654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') no-repeat center 25%; background-size: cover; text-align: center; height: 200px; width: 100%; }
+</style>
+<div class="background">
 
-<h2>Index</h2>
+    <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.WishListId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TrailId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TrailName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New Wish List", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WishListId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrailId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrailName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedUtc)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.WishListId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TrailId)
-        </td>
-        <th>
-            @Html.DisplayNameFor(model => model.TrailName)
-        </th>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedUtc)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.WishListId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.WishListId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.WishListId })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WishListId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrailId)
+                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.TrailName)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedUtc)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.WishListId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.WishListId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.WishListId })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+<div/>

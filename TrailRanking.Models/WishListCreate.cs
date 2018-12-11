@@ -11,7 +11,7 @@ namespace TrailRanking.Models
     public class WishListCreate
     {
         [Required]
+        [Display(Name = "Trail Id")]
         public int TrailId { get; set; }
-        
     }
 }
