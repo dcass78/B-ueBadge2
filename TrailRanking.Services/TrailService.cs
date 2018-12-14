@@ -46,6 +46,7 @@ namespace TrailRanking.Services
                                     {
                                         TrailId = e.TrailId,
                                         TrailName = e.TrailName,
+                                        EquipmentId = e.EquipmentId,
                                         CreatedUtc = e.CreatedUtc
                                     }
                             );
