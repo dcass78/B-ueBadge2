@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background: url('https://images.pexels.com/photos/248174/pexels-photo-248174.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,166 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.mainBackground {
+    background: url('https://images.pexels.com/photos/1578750/pexels-photo-1578750.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+
+.jumbotron {
+    background-color: transparent;
+    color: white;
+    text-shadow: 1px 1px;
+}
+
+.row {
+    color: white;
+}
+
+.navbar {
+    background: url('http://www.handmaps.org/maps/hand_drawn_map_346b.jpg');
+}
+
+.equipmentBody {
+    padding-top: 250px;
+    padding-bottom: 20px
+}
+
+.wishListBody {
+    padding-top: 250px;
+    padding-bottom: 20px
+}
+
+.trailBody {
+    padding-top: 250px;
+    padding-bottom: 20px
+}
+
+trailWishList {
+    position: absolute;
+    left: 50px;
+}
+
+.button3 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button3 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+    .button3 span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+.button3:hover span {
+    padding-right: 25px;
+}
+
+    .button3:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+.button2 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+    .button2 span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .button2 span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+    .button2:hover span {
+        padding-right: 25px;
+    }
+
+        .button2:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+.button1 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+    .button1 span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .button1 span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+    .button1:hover span {
+        padding-right: 25px;
+    }
+
+        .button1:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+.footer{
+    position:absolute;
+    top:500px;
+
 }
